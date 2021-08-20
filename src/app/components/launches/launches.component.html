@@ -1,0 +1,18 @@
+<div class="container">
+  <ul class="list-group" *ngIf="load">
+    <li class="list-group-item" *ngFor="let laun of launches; index as i">
+      <div>
+        {{ laun.flight_number }}<br />
+        {{ laun.mission_name }}<br />
+        {{ laun.launch_date_unix }}<br />
+        {{ laun.description }}<br />
+      </div>
+      <a
+        [routerLink]="['detail/', laun.flight_number]"
+        class="btn btn-primary active"
+        aria-current="page"
+        >Detail</a
+      >
+    </li>
+  </ul>
+</div>
